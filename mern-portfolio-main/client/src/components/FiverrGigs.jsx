@@ -17,9 +17,9 @@ const GIGS = [
     icon: <Cpu size={24} />,
   },
   {
-    title: 'Flutter Mobile App Development',
-    description: 'I will build a Flutter mobile app for Android and iOS.',
-    link: 'https://www.fiverr.com/s/dDyBLE8',
+    title: 'Word,Excel & Power Point formatting / Content Creation',
+    description: 'I will format and create content for Word, Excel and Power Point documents.',
+    link: 'https://www.fiverr.com/s/akl2V3A',
     icon: <Smartphone size={24} />,
   },
   {
