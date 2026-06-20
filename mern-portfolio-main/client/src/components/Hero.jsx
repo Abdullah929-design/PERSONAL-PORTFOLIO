@@ -168,7 +168,7 @@ const Hero = () => {
               <ArrowDown size={16} />
             </button>
             <a
-              href="https://abdullah929-design.github.io/Resume/"
+              href="https://drive.google.com/uc?export=download&id=1roIMHiNXQ1CfvUgVqCLBvXKhEIkluk4w"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary hero__cta-secondary"
