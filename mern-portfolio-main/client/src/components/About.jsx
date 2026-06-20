@@ -27,7 +27,7 @@ const SKILLS = {
   ],
   'Tools & Platforms': [
     'Git', 'GitHub', 'Postman', 'VS Code',
-    'Linux', 'Figma', 'Twilio', 'Multer', 'Axios',
+    'Linux', 'Figma', 'Twilio', 'Multer', 'Axios', 'Redis',
   ],
   'Mobile & Cross-platform': [
     'Flutter', 'Dart', 'Google MLKit', 'Android', 'iOS',
