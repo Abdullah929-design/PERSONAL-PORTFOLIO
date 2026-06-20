@@ -1,30 +1,59 @@
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
-import { Zap, Globe, Cpu, Wrench, Mail } from 'lucide-react'
+import { Zap, Globe, Cpu, Wrench, Mail, Server, Database, Cloud, Smartphone } from 'lucide-react'
 import './About.css'
 
 const SKILLS = {
-  'Web Development': ['React', 'Node.js', 'Express', 'MongoDB', 'HTML5', 'CSS3', 'JavaScript', 'REST APIs', 'Vite'],
-  'Machine Learning': ['Python', 'Scikit-learn', 'TensorFlow', 'Pandas', 'NumPy', 'Jupyter', 'Data Science'],
-  'Tools & Platforms': ['Git', 'GitHub', 'VS Code', 'Postman', 'Linux', 'Netlify', 'Vercel', 'Figma'],
+  'Frontend': [
+    'React', 'Next.js', 'JavaScript', 'HTML5', 'CSS3',
+    'Tailwind CSS', 'Zustand', 'Context API', 'Framer Motion', 'Vite',
+  ],
+  'Backend': [
+    'Node.js', 'Express.js', 'FastAPI', 'Flask',
+    'REST APIs', 'WebSockets', 'Socket.IO', 'JWT Auth',
+  ],
+  'Databases & Cache': [
+    'MongoDB', 'Mongoose', 'PostgreSQL', 'Redis',
+    'Firebase', 'FAISS', 'Cloudinary',
+  ],
+  'AI & Machine Learning': [
+    'Python', 'LLM Integration', 'HuggingFace', 'Ollama',
+    'RAG', 'scikit-learn', 'TensorFlow', 'PyTorch',
+    'OpenCV', 'NLP', 'Pandas', 'NumPy',
+  ],
+  'Cloud & Deployment': [
+    'Vercel', 'Netlify', 'Render', 'Hugging Face Spaces',
+    'Streamlit Cloud', 'Ngrok',
+  ],
+  'Tools & Platforms': [
+    'Git', 'GitHub', 'Postman', 'VS Code',
+    'Linux', 'Figma', 'Twilio', 'Multer', 'Axios',
+  ],
+  'Mobile & Cross-platform': [
+    'Flutter', 'Dart', 'Google MLKit', 'Android', 'iOS',
+  ],
 }
 
 const SKILL_ICONS = {
-  'Web Development': <Globe size={14} />,
-  'Machine Learning': <Cpu size={14} />,
-  'Tools & Platforms': <Wrench size={14} />,
+  'Frontend':                <Globe size={14} />,
+  'Backend':                 <Server size={14} />,
+  'Databases & Cache':       <Database size={14} />,
+  'AI & Machine Learning':   <Cpu size={14} />,
+  'Cloud & Deployment':      <Cloud size={14} />,
+  'Tools & Platforms':       <Wrench size={14} />,
+  'Mobile & Cross-platform': <Smartphone size={14} />,
 }
 
 const TIMELINE = [
-  { year: '2021', title: 'Started Coding Journey', desc: 'Discovered passion for software development' },
-  { year: '2022', title: 'BSE at Comsats University', desc: 'Bachelor of Software Engineering, Lahore campus' },
-  { year: '2023', title: 'MERN Stack Mastery', desc: 'Built full-stack applications and deepened React expertise' },
+  { year: '2021', title: 'Started Coding Journey',        desc: 'Discovered passion for software development' },
+  { year: '2022', title: 'BSE at Comsats University',     desc: 'Bachelor of Software Engineering, Lahore campus' },
+  { year: '2023', title: 'MERN Stack Mastery',            desc: 'Built full-stack applications and deepened React expertise' },
   { year: '2024', title: 'IBM Data Science Pro Certificate', desc: '40+ Coursera certifications in Data Science & ML' },
-  { year: '2025', title: 'Open to Opportunities', desc: 'Seeking full-time / freelance / internship roles' },
+  { year: '2025', title: 'Open to Opportunities',         desc: 'Seeking full-time / freelance / internship roles' },
 ]
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden:  { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 }
 
@@ -91,7 +120,17 @@ const About = () => {
                   Currently open to opportunities
                 </p>
                 <p className="about__availability-sub">
-                  Freelance · Internship · Full-time — <a href="#contact" onClick={e => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }} className="about__availability-link">Let's talk <Mail size={12} style={{ display: 'inline' }} /></a>
+                  Freelance · Internship · Full-time —{' '}
+                  <a
+                    href="#contact"
+                    onClick={e => {
+                      e.preventDefault()
+                      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+                    }}
+                    className="about__availability-link"
+                  >
+                    Let's talk <Mail size={12} style={{ display: 'inline' }} />
+                  </a>
                 </p>
               </div>
             </motion.div>
@@ -99,7 +138,6 @@ const About = () => {
 
           {/* Right: Skills */}
           <motion.div className="about__skills-col" variants={fadeUp}>
-            {/* Skills by category */}
             {Object.entries(SKILLS).map(([category, tags]) => (
               <motion.div key={category} className="skill-group" variants={fadeUp}>
                 <h3 className="skill-group__title">
@@ -119,10 +157,10 @@ const About = () => {
             {/* Stat Cards */}
             <div className="about__stat-cards">
               {[
-                { value: '10+', label: 'Projects Built', icon: '🚀' },
-                { value: '40+', label: 'Certifications', icon: '🏆' },
-                { value: '3+', label: 'Years Coding', icon: '⚡' },
-                { value: '2', label: 'Specializations', icon: '🎯' },
+                { value: '13+', label: 'Projects Built',   icon: '🚀' },
+                { value: '40+', label: 'Certifications',   icon: '🏆' },
+                { value: '3+',  label: 'Years Coding',     icon: '⚡' },
+                { value: '7',   label: 'Tech Categories',  icon: '🎯' },
               ].map(s => (
                 <motion.div key={s.label} className="about__stat-card glass" variants={fadeUp}>
                   <span className="about__stat-icon">{s.icon}</span>
