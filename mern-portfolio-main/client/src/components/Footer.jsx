@@ -86,7 +86,7 @@ const Footer = () => {
               </div>
             </div>
             <a
-              href="https://github.com/Abdullah929-design"
+              href="https://abdullah929-design.github.io/Resume/"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary footer__resume-btn"
